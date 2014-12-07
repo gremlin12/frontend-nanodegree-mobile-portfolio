@@ -12,7 +12,7 @@
 
     <!-- <link href="css/style.css" rel="stylesheet"> -->
     <link href="css/print.css" rel="stylesheet" media="print">
-    <link href="views/css/bootstrap.grid.css" rel="stylesheet">
+    <link href="views/css/bootstrap-grid.min.css" rel="stylesheet">
     <style>
       body {
         background: #fff;
@@ -70,6 +70,9 @@
         var l = document.createElement('link'); l.rel = 'stylesheet';
         l.href = 'css/style.css';
         var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+        var l2 = document.createElement('link'); l2.rel = 'stylesheet';
+        l2.href = 'views/css/bootstrap-grid.min.css';
+        h.parentNode.insertBefore(l2, h);
       };
       var raf = requestAnimationFrame || mozRequestAnimationFrame ||
           webkitRequestAnimationFrame || msRequestAnimationFrame;
