@@ -69,11 +69,10 @@
       var cb = function() {
         var l = document.createElement('link'); l.rel = 'stylesheet';
         l.href = 'css/style.css';
-        var t = document.getElementsByTagName('title')[0];
-        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, t);
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h.nextSibling);
         var l2 = document.createElement('link'); l2.rel = 'stylesheet';
         l2.href = 'views/css/bootstrap-grid.min.css';
-        h.parentNode.insertBefore(l2, t);
+        h.parentNode.insertBefore(l2, h.nextSibling);
       };
       var raf = requestAnimationFrame || mozRequestAnimationFrame ||
           webkitRequestAnimationFrame || msRequestAnimationFrame;
