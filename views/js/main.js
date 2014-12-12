@@ -518,12 +518,9 @@ function updatePositions() {
   ticking = false;
 
   var currentScrollY = latestKnownScrollY;
-  	
+
   frame++;
   window.performance.mark("mark_start_frame");
-  requestAnimationFrame(updatePositions);
-
-  var currentScrollY = latestKnownScrollY;
 
   var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
