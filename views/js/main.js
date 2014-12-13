@@ -513,8 +513,10 @@ function requestTick() {
 	}
 	ticking = true;
 } */
+window.requestAnimationFrame(updatePositions);
 
 function updatePositions() {
+  requestAnimationFrame(updatePositions);	
   //ticking = false;
 
  // var currentScrollY = latestKnownScrollY;
