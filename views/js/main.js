@@ -501,8 +501,14 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 var latestKnownScrollY = 0;
 
+function onScroll() {
+	latestKnownScrollY = window.scrollY;
+}
+
 function updatePositions() {
-  latestKnownScrollY = window.scrollY;	
+  requestAnimationFrame(updatePositions);
+
+  var currentScrollY = latestKnownScrollY;	
   frame++;
   window.performance.mark("mark_start_frame");
 
@@ -523,7 +529,7 @@ function updatePositions() {
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', onScroll);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
