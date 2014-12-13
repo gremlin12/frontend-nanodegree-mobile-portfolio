@@ -499,7 +499,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Moves the sliding background pizzas based on scroll position
 
-var latestKnownScrollY = 0,
+/**var latestKnownScrollY = 0,
     ticking = false;
 
 function onScroll() {
@@ -512,12 +512,12 @@ function requestTick() {
 		requestAnimationFrame(updatePositions);
 	}
 	ticking = true;
-}
+} */
 
 function updatePositions() {
-  ticking = false;
+  //ticking = false;
 
-  var currentScrollY = latestKnownScrollY;
+ // var currentScrollY = latestKnownScrollY;
 
   frame++;
   window.performance.mark("mark_start_frame");
