@@ -521,7 +521,7 @@ function updatePositions() {
 
  // var currentScrollY = latestKnownScrollY;
 
-  frame++;
+  //frame++;
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
