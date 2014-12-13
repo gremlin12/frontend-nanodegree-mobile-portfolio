@@ -513,7 +513,7 @@ function requestTick() {
 	}
 	ticking = true;
 } */
-window.requestAnimationFrame(updatePositions);
+// window.requestAnimationFrame(updatePositions);
 
 function updatePositions() {
   requestAnimationFrame(updatePositions);	
