@@ -503,6 +503,7 @@ var latestKnownScrollY = 0;
 
 function onScroll() {
 	latestKnownScrollY = window.scrollY;
+	updatePositions();
 }
 
 function updatePositions() {
