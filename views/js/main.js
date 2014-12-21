@@ -501,11 +501,11 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 
 // Moves the sliding background pizzas based on scroll position
 
+var items = document.querySelectorAll('.mover');
+
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover');
 
   var magicNumber = document.body.scrollTop / 1250;
 
