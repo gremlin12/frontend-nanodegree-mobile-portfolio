@@ -35,7 +35,7 @@ form {
   z-index: -1;
 }
 
-#movingpizzas1 img {
+.mover img {
   height: 100px;
   width: 73.333px;
 }
