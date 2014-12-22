@@ -35,11 +35,6 @@ form {
   z-index: -1;
 }
 
-.mover img {
-  height: 100px;
-  width: 73.333px;
-}
-
 .randomPizzaContainer {
   float: left;
   display: flex;
