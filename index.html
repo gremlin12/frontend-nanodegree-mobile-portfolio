@@ -9,7 +9,7 @@
 
    <!-- <link href="css/style.css" rel="stylesheet"> -->
     <style>
-      body {background: #fff; color: #333; margin: 0; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.61;}
+      body {background: #fff; color: #333; margin: 0; font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.61;}
       a { color: #12C; }
       a:visited { color: #61C; }
       a:focus { outline: thin dotted; }
@@ -85,6 +85,17 @@
           webkitRequestAnimationFrame || msRequestAnimationFrame;
       if (raf) raf(cb);
       else window.addEventListener('load', cb);
+    </script>
+    <script>
+      var cb2 = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = 'href="//fonts.googleapis.com/css?family=Open+Sans:400,700';
+        document.getElementsByTagName('head')[0].appendChild(l);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb2);
+      else window.addEventListener('load', cb2);
     </script>
     <script>
       (function(w,g){w['GoogleAnalyticsObject']=g;
