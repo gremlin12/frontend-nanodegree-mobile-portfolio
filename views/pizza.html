@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html>
-<head>  
+<html lang="en">
+<head> 
+  <meta charset="utf-8">  
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
-  <!-- <link rel="stylesheet" href="css/bootstrap-grid.css"> -->
+  <title>Cam's Pizzeria</title>
   <style>
     * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -box-sizing: border-box;}
     body {font-family: "Trebuchet MS", Helvetica, sans-serif; background: black;}
@@ -12,6 +12,7 @@
     img { border: 0; max-width: 100%; }
     .centered {text-align: center;}
     #pizzaSize {font-weight: 800;}
+    /* Prevent unnecessary background painting by hiding backface-visibility */
     .mover {position: fixed; width: 256px; z-index: -1; backface-visibility: hidden;}
     .randomPizzaContainer {float: left; display: flex;}
     .randomPizzaContainer:after {content: ""; display: table; clear:both;}
@@ -152,6 +153,7 @@
     <div id="footer" class="col-md-12">Thanks for visiting! &copy; 2014 Udacity</div>
   </div>
   <script type="text/javascript" src="js/main.min.js"></script>
+  <!-- Delays Bootstrap css until after page loads to prevent render blocking -->
   <script>
       var cb = function() {
         var l = document.createElement('link'); l.rel = 'stylesheet';

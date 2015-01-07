@@ -1,71 +1,43 @@
 ## Website Performance Optimization portfolio project
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
-
-To get started, check out the repository, inspect the code,
-
-### Getting started
-
-Some useful tips to help you get started:
-
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
-
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
-
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
-
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ngrok 8080
-  ```
-
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
-
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
-
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
-
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
-
-### Sample Portfolios
-
-Feeling uninspired by the portfolio? Here's a list of cool portfolios I found after a few minutes of Googling.
-
-* <a href="http://www.reddit.com/r/webdev/comments/280qkr/would_anybody_like_to_post_their_portfolio_site/">A great discussion about portfolios on reddit</a>
-* <a href="http://ianlunn.co.uk/">http://ianlunn.co.uk/</a>
-* <a href="http://www.adhamdannaway.com/portfolio">http://www.adhamdannaway.com/portfolio</a>
-* <a href="http://www.timboelaars.nl/">http://www.timboelaars.nl/</a>
-* <a href="http://futoryan.prosite.com/">http://futoryan.prosite.com/</a>
-* <a href="http://playonpixels.prosite.com/21591/projects">http://playonpixels.prosite.com/21591/projects</a>
-* <a href="http://colintrenter.prosite.com/">http://colintrenter.prosite.com/</a>
-* <a href="http://calebmorris.prosite.com/">http://calebmorris.prosite.com/</a>
-* <a href="http://www.cullywright.com/">http://www.cullywright.com/</a>
-* <a href="http://yourjustlucky.com/">http://yourjustlucky.com/</a>
-* <a href="http://nicoledominguez.com/portfolio/">http://nicoledominguez.com/portfolio/</a>
-* <a href="http://www.roxannecook.com/">http://www.roxannecook.com/</a>
-* <a href="http://www.84colors.com/portfolio.html">http://www.84colors.com/portfolio.html</a>
+This optimization project was completed as part of the Udacity's Frontend Web-Developer Nanodegree program. The basic instructions were as follows:
 
 
-Changes made:
-1. Resized pizzeria image and created thumbnail for it.
-2. Added media query to "print.css" link in index.html
-3. Make analytics script async
+"Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884)."
+
+
+Optimizations include:
+1. Images have been scaled and compressed using a combination of Gimp, tinypng.com and tingyjpg.com. Some images have been converted to a more appropriate format.
+2. Some CSS files, such as print.css, were optimized by adding a media query so
+that they only load when needed, thus preventing unnecessary render blocking.
+3. Styling needed for above-the-fold content is placed as inline CSS in the 
+HTML files. External CSS files are generated dynamically after the page loads using a JavaScrip function, thus preventing render blocking.
+4. Any scripts that are not immediately required to load the page are designated 
+asynchronous with the "async" HTML attribute. This allows the parser
+to continue constructing the DOM and only execute the script when it's ready.
+5. Google Open Sans font was replaced with web-safe Helvetica font. 
+6. The JavaScript for Cam's Pizzeria page has been optimized by taking expensive
+calculations out of the loops, especially in the updatePositions() function. This
+prevents unnecessary recalculations/layouts during scrolling. Unnecessary and expensive repaints of the background are avoided by adding "backface-visibility: hidden" to the CSS styling.
+7. Large CSS files and JavaScript files have been minimized -- removing "white space" and comments reduces file size, which means less to load.
+
+To view the web-page locally on your computer, follow these steps:
+1. Download the zip file and extract its contents.
+2. Open the index.html file in a browser.
+
+To test the peformance of the website:
+1. Open the following link in your browser: http://gremlin12.github.io/frontend-nanodegree-mobile-portfolio/
+2. Copy the URL address.
+3. In a new tab, go to PageSpeed Insights at https://developers.google.com/speed/pagespeed/insights/
+4. Paste the web page URL into the input form on Pagespeed Insights and click the "analyze" button.
+5. Repeat steps 2-4 for all the links found on http://gremlin12.github.io/frontend-nanodegree-mobile-portfolio/
+
+Sources:
+"Render Blocking CSS" [https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css] for help with media types and media queries
+"Adding Interactivity with Javascript" [https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript] provided the JavaScript code to generate CSS files dynamically.
+"Image Optimization" [https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization] for help with formatting and compressing images.
+Ben Frain's blog-post "Improving the CSS Performance of Fixed Position Elements" [http://benfrain.com/improving-css-performance-fixed-position-elements/] provided the "backface-visibility: hidden" trick to prevent unnecessary repainting of background when scrolling.
+"Pagespeed" by feedthebot [http://www.feedthebot.com/pagespeed/] provided a lot of useful general information about website optimization.
+Alex Danilo's blog-post "User Timing API" [http://www.html5rocks.com/en/tutorials/webperformance/usertiming/] helped in understanding how to measure performance with the User Timing API.
+Paul Irish's post "Why Moving Elements With Translate() Is Better Than Pos:abs Top/left" [http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/] -- title is self-explanatory.
+Richard Thompson's TechPortal article "Improve Rendering Performance with Chrome Dev Tools" [http://techportal.inviqa.com/2014/04/09/improve-rendering-performance-with-chrome-dev-tools/] was especially helpful in understanding how to measure FPS.
