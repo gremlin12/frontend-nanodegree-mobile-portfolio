@@ -1,4 +1,4 @@
-## Website Performance Optimization portfolio project
+## Website Performance Optimization project
 
 This optimization project was completed as part of the Udacity's Frontend Web-Developer Nanodegree program. The basic instructions were as follows:
 
@@ -38,7 +38,7 @@ To view the web-page locally on your computer, follow these steps:
 
 To test the peformance of the website:
 
-1. Open the following link in your browser: http://gremlin12.github.io/frontend-nanodegree-mobile-portfolio/
+1. Open the following link in your browser: http://gremlin12.github.io/website-optimization/
 
 2. Copy the URL address.
 
